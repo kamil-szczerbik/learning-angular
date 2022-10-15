@@ -1,0 +1,6 @@
+<h3 appBasicDirective [defaultColor]="'yellow'" [highlightColor]="'red'">Custom Directive Works!</h3>
+
+<input type="text" value="test" #inputRef (input)="inputFunction($event)" />
+<button type="button" (click)="respondToClick()">Click me!</button>
+
+<app-child></app-child>

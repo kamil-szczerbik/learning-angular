@@ -1,0 +1,50 @@
+<header>
+  <h1>Website Title!</h1>
+  <hr>
+</header>
+  
+  <main>
+    <div class="leftSide">
+      <div class="teamsList">
+        <h2>Lista drużyn sportowych:</h2>
+        <hr>
+        <ul>
+          <span *ngFor="let team of teams; let i = index">
+            <li>
+              <a [routerLink]="['team', teams[i].id]">
+                {{teams[i].name}}
+              </a>
+            </li>
+            <div class="deleteTeam"><p class="bla" (click)="onDelete(i, teams[i].id)">X</p></div>
+          </span>
+        </ul>
+        <hr>  
+      </div>
+    </div>
+  
+    <div class="rightSide">
+      <form class="teamForm" [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Nazwa zespołu: </label><br>
+          <input type="text" id="name" name="name" formControlName="name"><br> 
+          <label for="name">Opis zespołu: </label><br>
+          <textarea id="about" name="about" formControlName="about"></textarea>    
+        </div>
+        <div>
+          <label for="playerName">Nazwa zawodnika: </label><br>
+          <input type="text" id="playerName" name="playerName" formControlName="player1"><br> 
+          <label for="playerName">Nazwa zawodnika: </label><br>
+          <input type="text" id="playerName" name="playerName" formControlName="player2"><br> 
+          <label for="playerName">Nazwa zawodnika: </label><br>
+          <input type="text" id="playerName" name="playerName" formControlName="player3"><br> 
+          <label for="playerName">Nazwa zawodnika: </label><br>
+          <input type="text" id="playerName" name="playerName" formControlName="player4"><br> 
+          <label for="playerName">Nazwa zawodnika: </label><br>
+          <input type="text" id="playerName" name="playerName" formControlName="player5"><br> 
+        </div>
+        <button type="submit" >Dodaj nową drużynę</button>
+      </form>
+    </div>
+  </main>
+
+  

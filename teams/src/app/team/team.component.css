@@ -1,0 +1,47 @@
+main {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 650px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px; 
+}
+
+.teamForm {
+    margin-top: 20px;
+}
+
+.teamForm input, textarea {
+    width: 292px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 39px;
+}
+
+.btnForm {
+    margin-top: 10px;   
+    width: 140px;
+    height: 39px;
+}
+
+.btn {
+    width: 300px;
+    height: 39px;
+}

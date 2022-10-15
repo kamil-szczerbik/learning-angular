@@ -1,0 +1,108 @@
+main {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftSide {
+    width: 300px;
+}
+
+.rightSide {
+    width: 300px;
+}
+
+header {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 650px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.teamsList {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.addNewTeamContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    background-color: #4571CC;
+}
+
+.addNewTeam {
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.deleteTeam{
+    width: 39px;
+    height: 39px;
+    background-color: #CC381D;
+}
+
+.bla {
+    line-height: 39px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+ul {
+    padding: 0;
+    text-align: center;
+}
+
+ul span {
+    display: flex;
+}
+
+li {
+    width: 261px;
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px; 
+    background-color: #9acd32;
+}
+
+a {
+    text-decoration: none;
+    color: #4571CC;  
+}
+
+.teamForm {
+    margin-top: 20px;
+}
+
+.teamForm input, textarea {
+    width: 292px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+textarea {
+    max-width: 292px;
+}
+
+button {
+    margin-top: 10px;
+    width: 300px;
+    height: 39px;
+}
+

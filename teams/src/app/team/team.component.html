@@ -1,0 +1,53 @@
+<main>
+    <div *ngIf="!isEdit; else edit">
+        <h1>{{ team.name }}</h1>
+        <hr>
+        <h2>O zespole:</h2>
+        <p>{{ team.about }}</p>
+        
+        <ul>
+            <h2>Lista graczy:</h2>
+            <li>Gracz 1 - {{ team.player1 }}</li>
+            <li>Gracz 2 - {{ team.player2 }}</li>
+            <li>Gracz 3 - {{ team.player3 }}</li>
+            <li>Gracz 4 - {{ team.player4 }}</li>
+            <li>Gracz 5 - {{ team.player5 }}</li>
+        </ul>
+
+        <button class="btn" type="button" (click)="onEdit()">Edytuj {{ this.team.name }}</button>
+    </div>
+    
+    <ng-template #edit>
+        <div>
+            <form class="teamForm" [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+                <div>
+                  <label for="name">Nazwa zespołu: </label><br>
+                  <input type="text" id="name" name="name" formControlName="name"><br> 
+                  <label for="name">Opis zespołu: </label><br>
+                  <textarea id="about" name="about" formControlName="about"></textarea>    
+                </div>
+                <div>
+                  <label for="playerName">Nazwa zawodnika: </label><br>
+                  <input type="text" id="playerName" name="playerName" formControlName="player1"><br> 
+                  <label for="playerName">Nazwa zawodnika: </label><br>
+                  <input type="text" id="playerName" name="playerName" formControlName="player2"><br> 
+                  <label for="playerName">Nazwa zawodnika: </label><br>
+                  <input type="text" id="playerName" name="playerName" formControlName="player3"><br> 
+                  <label for="playerName">Nazwa zawodnika: </label><br>
+                  <input type="text" id="playerName" name="playerName" formControlName="player4"><br> 
+                  <label for="playerName">Nazwa zawodnika: </label><br>
+                  <input type="text" id="playerName" name="playerName" formControlName="player5"><br> 
+                </div>
+                <div class="btnContainer">
+                    <button class="btnForm" type="submit" >Aktualizuj {{ this.team.name }}</button>
+                    <button class="btnForm" type="button" (click)="isEdit=false">Anuluj edytowanie</button>    
+                </div>
+              </form>
+        </div>
+    </ng-template>
+
+    
+    <br><br><br>
+    <button class="btn" type="button" (click)="goBack()"> ← Wróć do listy zespołów</button>
+    
+</main>

@@ -1,0 +1,48 @@
+<form (ngSubmit)="onAddPost()" #f="ngForm">
+  <h3>Title:</h3>
+  <input 
+  type="text"
+  ngModel
+  name="title"
+  >
+  <h3>Content:</h3>
+  <input 
+  type="text"
+  ngModel
+  name="content"
+  >  
+  <br />
+  <br />
+  <button type="submit">Send Post</button>
+</form>
+
+<br />
+<button type="button" (click)="onGetPosts()">Fetch posts</button>
+
+<br />
+<br />
+<button type="button" (click)="onClearPosts()">Delete posts</button>
+
+<div class="noPostsContainer">
+  <p class="noPosts" *ngIf="isFetching && !error">...Loading</p>
+</div>
+<div class="errorContainer" *ngIf="error">
+  <p class="error">
+    <b>
+      Something went wrong! 
+      <br />
+      {{ error }}
+    </b>
+  </p>
+</div>
+
+<p class="noPosts" *ngIf="!posts.length && !isFetching  ; else postsExist">No posts available!</p>
+
+<ng-template #postsExist>
+  <div *ngFor="let post of posts; let i=index" class="post">
+    <h3 class="postTitle">Post {{i+1}} - {{post.title}}</h3>
+    <hr>
+    <p class="postContent">{{post.content}}</p>
+    <p class="deletePost" (click)='onClearPost(i, post.id)'>Usuń post</p>
+  </div>
+</ng-template>
