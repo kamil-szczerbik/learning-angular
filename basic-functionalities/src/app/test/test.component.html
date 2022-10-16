@@ -1,0 +1,24 @@
+<div class="container" [ngClass]="{containerBg: isBackground}">
+    <button type="button" (click)="onClick()">Change side!</button>
+    <br><br>
+
+    <ng-template [ngIf]="isTrue" [ngIfElse]="dark">
+        <img  src="/assets/images/light.jpg">
+        <p class="light">Light side of force!</p>
+    </ng-template>
+
+    <ng-template #dark>
+        <img src="/assets/images/dark.jpg">
+        <p class="dark">Dark side of force!</p>
+    </ng-template>
+
+    <p #refka>Mam na imię {{ name }}</p>
+    <p>{{ child.text }}</p>
+    <p>{{ service.text }}</p>
+</div>
+
+<app-test-child 
+[name]="name"
+(changeBackground)="changeBackground($event)"
+>
+</app-test-child>

@@ -1,0 +1,8 @@
+<div class="container">
+    <p>Cześć {{ name }}</p>
+    <br>
+    <label for="name">Podaj imię: </label>
+    <input type="text" value="Kamil" #newName>
+    <br><br>
+    <button type="button" (click)="onClick(newName.value)">Click me!</button>
+</div>

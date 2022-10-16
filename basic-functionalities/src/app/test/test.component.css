@@ -1,0 +1,22 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    text-align: center;
+}
+
+.containerBg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    text-align: center;
+    background-color: goldenrod;
+}
+
+.light {
+    color: rgb(59, 137, 255)
+}
+
+.dark {
+    color: rgb(184, 28, 28)
+}
