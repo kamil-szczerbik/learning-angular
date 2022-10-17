@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
 import { TestChildComponent } from '../test-child/test-child.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-test',
@@ -17,7 +18,7 @@ export class TestComponent implements OnInit {
 
   // serviceText: string = this.service.text;
 
-  constructor(public service: AppServiceService) { }
+  constructor(public service: AppServiceService, private http: HttpClient) { }
 
   ngOnInit(): void {
     console.log(this.refka);
@@ -31,5 +32,12 @@ export class TestComponent implements OnInit {
     this.isBackground = !this.isBackground;
     this.name = newName;
     console.log(newName);
+  }
+
+  APItest(): void {
+    this.http.get('/api/test', { responseType: 'text' }).subscribe({
+      next: (response) => console.log(response),
+      error: (error) => console.error(error)
+    });
   }
 }
